@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+:root {
+    --bg-primary: #0B1120;
+    --bg-card: #151F32;
+    --primary: #0EA5E9;
+    --secondary: #22D3EE;
+    --accent: #FFD700;
+    --glow: #38BDF8;
+}
+
+body {
+    background: var(--bg-primary);
+    color: white;
+    font-family: "Sora", system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================
+   PREMIUM ANIMATIONS
+   ================================ */
+
+/* Floating water droplets */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Water ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+.animate-ripple {
+    animation: ripple 1.5s ease-out infinite;
+}
+
+/* Glow pulse for buttons/CTAs */
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+    }
+    50% {
+        opacity: 0.8;
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.8);
+    }
+}
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Gradient flow background */
+@keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease infinite;
+}
+
+/* Fade up entrance */
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+}
+
+/* Fade in entrance */
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+}
+
+/* Scale in entrance */
+@keyframes scale-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+}
+
+/* Slide from left */
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-slide-left {
+    animation: slide-left 0.5s ease-out forwards;
+}
+
+/* Slide from right */
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-slide-right {
+    animation: slide-right 0.5s ease-out forwards;
+}
+
+/* Subtle bounce for icons */
+@keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Water flow shimmer */
+@keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.3), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ================================
+   PARTICLE EFFECTS
+   ================================ */
+.particle-container {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-particle 4s ease-in-out infinite;
+}
+
+@keyframes float-particle {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    50% {
+        transform: translateY(-100px) translateX(20px);
+    }
+}
+
+/* ================================
+   GLASS MORPHISM
+   ================================ */
+.glass {
+    background: rgba(21, 31, 50, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.glass-strong {
+    background: rgba(11, 17, 32, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* ================================
+   PREMIUM CARD STYLES
+   ================================ */
+.card-premium {
+    background: linear-gradient(135deg, #151F32 0%, #1E2940 100%);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(14, 165, 233, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+    border-color: rgba(34, 211, 238, 0.5);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 60px rgba(34, 211, 238, 0.2);
+    transform: translateY(-4px);
+}
+
+/* ================================
+   GLOW EFFECTS
+   ================================ */
+.glow-text {
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.8), 0 0 40px rgba(34, 211, 238, 0.5);
+}
+
+.glow-border {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.5), inset 0 0 20px rgba(14, 165, 233, 0.1);
+}
+
+.glow-circle {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+}
+
+/* ================================
+   BUTTON STYLES
+   ================================ */
+.btn-primary {
+    background: linear-gradient(135deg, #0EA5E9 0%, #22D3EE 100%);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFE579 100%);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    color: #0B1120;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   TEXT GRADIENT
+   ================================ */
+.text-gradient {
+    background: linear-gradient(135deg, #0EA5E9 0%, #22D3EE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFE579 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ================================
+   DELAY UTILITIES
+   ================================ */
+.delay-75 { animation-delay: 75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
